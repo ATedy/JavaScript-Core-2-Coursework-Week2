@@ -151,6 +151,13 @@ body {
 #greenBtn {
   background: #87ca8a;
 }
+.bookStyle{
+  display: inline-block;
+  height: 400px;
+  height: auto;
+  background-color: #ce5f31;
+  margin-left: 40px;
+}
 
 @media screen and (min-width: 992px) {
   .navbar-brand > img {
