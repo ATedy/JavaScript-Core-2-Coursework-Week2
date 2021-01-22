@@ -1,5 +1,43 @@
 function highlightWords(paragraph, colours) {
   // Write your code here...
+  // creates p tag and append it to #content
+  const content  = document.getElementById('content');
+  const par = document.createElement('p');
+  // par.textContent = paragraph;
+  content.append(par);
+  
+  const parentEl  = document.createElement('select');
+  content.appendChild(parentEl);
+  
+
+  for(let i = 0; i < colours.length; i++){
+    parentEl.appendChild(document.createElement('option')).innerHTML = `${colours[i]}`;
+  }
+  let splitPar = [];
+   splitPar = paragraph.split(" ");
+
+  // console.log(splitPar);
+
+  for( let j = 0; j < splitPar.length; j++){
+    let wordSpan = document.createElement('span');
+    wordSpan.innerHTML = `${splitPar[j]} `;
+    wordSpan.addEventListener('click', function(){
+
+      if(parentEl.value === "none"){
+        this.style.backgroundColor = "";
+      }else{
+        this.style.backgroundColor = parentEl.value;
+      }
+    })
+
+ par.appendChild(wordSpan);
+
+
+  }
+
+  const spanEvnt = document.getElementsByTagName('span');
+  
+  
 }
 
 const paragraph =
@@ -8,3 +46,6 @@ const paragraph =
 const colours = ["yellow", "green", "blue", "none"];
 
 highlightWords(paragraph, colours);
+
+
+
