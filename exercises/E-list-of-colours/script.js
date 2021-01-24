@@ -19,7 +19,7 @@ const content = document.getElementById('content');
    parentEl.appendChild(optionDrop);
 }
 //  console.log( `${parentEl.options[0].textContent}`);
- parentEl.addEventListener('change', function(){
+  parentEl.addEventListener('change', function(){
    messageP.innerHTML = `You have Selected: ${this.value}`;
    messageP.style.color = this.value;
 
