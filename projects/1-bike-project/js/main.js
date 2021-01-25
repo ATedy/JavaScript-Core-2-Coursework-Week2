@@ -31,21 +31,46 @@ function colors(){
     btnVolu.style.background = '#8c9c08';
     btnVolu.style.color = 'white';
   })
-
-
-  //Part -2
-  //object.preventDefault
-  
-
-
-
-
-  
-
-
-  
-
-
 }
 
 colors();
+
+//Part -2
+  //object.preventDefault
+  //object.reset
+  
+  const btnSubmit = document.getElementById('submitId');
+
+  function formValidator(){
+    const formInput = document.getElementsByClassName('form-control');
+    let inputCounter = 0;
+    // console.log(formFields[0].nodeValue);
+    for( let i = 0; i < formInput.length; i++){
+      // if no input is given to the fields
+      if(!(formInput[i].value).length > 0){
+        inputCounter++;
+        formInput[i].style.backgroundColor =" #f7a29c";
+      }
+    }
+    const emailValue = formInput[0].value;
+    // if the email input isn't passed
+    if(!emailValue.includes('@')){
+      inputCounter++;
+      formInput[0].style.backgroundColor =" #f7a29c";
+    }
+    
+    // all tests passed
+    // Object.reset() empty the input fields after submitting
+    if(inputCounter === 0){
+      let RegForm = document.getElementById("RegForm");
+      RegForm.reset();
+      alert("Thank you for filling out the form");
+   }
+   
+}
+ 
+
+  btnSubmit.addEventListener("click",function(e){
+    e.preventDefault();
+    formValidator();
+});
