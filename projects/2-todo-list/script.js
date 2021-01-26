@@ -32,7 +32,8 @@ function populateTodoList(todos) {
 
   
    btnDelete.addEventListener("click", () =>{
-     todoList.removeChild(li);
+    //  todoList.removeChild(li);
+     this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
    });
 
   span.appendChild(btnDelete);
