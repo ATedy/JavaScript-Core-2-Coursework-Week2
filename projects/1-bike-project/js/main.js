@@ -35,9 +35,6 @@ function colors(){
 
 colors();
 
-//Part -2
-  //object.preventDefault
-  //object.reset
   
   const btnSubmit = document.getElementById('submitId');
 
@@ -59,7 +56,7 @@ colors();
       formInput[0].style.backgroundColor =" #f7a29c";
     }
     
-    // all tests passed
+    // if all tests passed
     // Object.reset() empty the input fields after submitting
     if(inputCounter === 0){
       let RegForm = document.getElementById("RegForm");
